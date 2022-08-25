@@ -13,10 +13,28 @@ contract Whitelist {
     // NOTE: Don't change this variable name, as it will be part of verification
     uint8 public numAddressesWhitelisted;
 
+    // Address of the manager that deployed the contract
+    address public owner;
+
+    // Moderator mapping
+    mapping(address => bool) public moderators;
+
     // Setting the Max number of whitelisted addresses
     // User will put the value at the time of deployment
     constructor(uint8 _maxWhitelistedAddresses) {
         maxWhitelistedAddresses = _maxWhitelistedAddresses;
+        // Set the owner address.
+        owner = msg.sender;
+        // Add owner to the moderators.
+        moderators[msg.sender] = true;
+    }
+
+    /*
+     * @dev
+     * Control function to make sure that only an owner or an admin can call a particular function.
+     */
+    function isAdmin() internal view returns (bool) {
+        return ((msg.sender == owner) || (moderators[msg.sender] == true));
     }
 
     /**
@@ -35,15 +53,34 @@ contract Whitelist {
     }
 
     /**
-        removeAddressToWhitelist - This function removes the address of the sender from the
+        removeAddressToWhitelist - This function removes the address from the
         whitelist
      */
-    function removeAdressFromWhitelist() public {
-        // check if the user is whitelisted
-        require(whitelistedAddresses[msg.sender]);
+    function removeAdressFromWhitelist(address wAddress) public {
+        // only the admin or a moderator can call thos function.
+        require(isAdmin(), "Not owner or moderator");
         // removes the address which called the function to the whitelistedAddress array
-        whitelistedAddresses[msg.sender] = false;
+        whitelistedAddresses[wAddress] = false;
         // decrease the number of whitelisted addresses
         numAddressesWhitelisted -= 1;
+    }
+
+    // add an array of addresses to whitelist
+    function addArrayOfAddressToWhiteList(address[] memory ArrayAddress)
+        public
+    {
+        // only the admin or a moderator can call thos function.
+        require(isAdmin(), "Not owner or moderator");
+
+        // length of the array
+        uint256 arrayLength = ArrayAddress.length;
+
+        // loop through the array, add and increment number of addresses
+        for (uint256 i = 0; i < arrayLength; i++) {
+            // check if the array of user has already been whitelisted
+            require(!whitelistedAddresses[ArrayAddress[i]]);
+            whitelistedAddresses[ArrayAddress[i]] = true;
+            numAddressesWhitelisted += 1;
+        }
     }
 }
