@@ -6,7 +6,7 @@ First 10 users get whitelisted for presale access.
 
 [Deployed contract on Rinkeby Etherscan.](https://rinkeby.etherscan.io/address/0x4b5a54b2EbC2247B1B397346fFd705dDc0f9741f "whitelist") 
 
-## CxoNFT-collection
+## 2. CxoNFT-collection
 Owner of CxoNFT deploys deploys the contract.   
 Owner of the deployed contract starts the presale.   
 Whitelisted addresses have access to presale mint.   
