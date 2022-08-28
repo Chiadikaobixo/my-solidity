@@ -1,9 +1,9 @@
 # my-solidity
 
-## 1. Lottery
-Manager deploys the contract
-Users can enter the contract for draw
-[Deployed contract on Rinkeby Etherscan.](https://rinkeby.etherscan.io/address/0x0E10F5026b0fb0a61C04B585A68e4EE533149fd4 "lottery") 
+## 1. Lottery   
+Manager deploys the contract   
+Users can enter the contract for draw   
+[Deployed contract on Rinkeby Etherscan.](https://rinkeby.etherscan.io/address/0x0E10F5026b0fb0a61C04B585A68e4EE533149fd4 "lottery")    
 
 ## 2. WhiteList
 Owner of the contract deploys the contract.  
