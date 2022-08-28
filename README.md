@@ -8,7 +8,7 @@ First 10 users get whitelisted for presale access.
 
 ## CxoNFT-collection
 Owner of CxoNFT deploys deploys the contract.   
-Owner of the deployed contract has starts the presale.   
+Owner of the deployed contract starts the presale.   
 Whitelisted addresses have access to presale mint.   
 Any address has access to the public mint once presale has ended.     
 Owner of the deployed contract can withdraw from the contract.   
