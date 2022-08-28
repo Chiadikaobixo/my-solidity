@@ -1,12 +1,17 @@
 # my-solidity
 
-## 1. WhiteList
+## 1. Lottery
+Manager deploys the contract
+Users can enter the contract for draw
+[Deployed contract on Rinkeby Etherscan.](https://rinkeby.etherscan.io/address/0x0E10F5026b0fb0a61C04B585A68e4EE533149fd4 "lottery") 
+
+## 2. WhiteList
 Owner of the contract deploys the contract.  
 First 10 users get whitelisted for presale access.  
 
 [Deployed contract on Rinkeby Etherscan.](https://rinkeby.etherscan.io/address/0x4b5a54b2EbC2247B1B397346fFd705dDc0f9741f "whitelist") 
 
-## 2. CxoNFT-collection
+## 3. CxoNFT-collection
 Owner of CxoNFT deploys deploys the contract.   
 Owner of the deployed contract starts the presale.   
 Whitelisted addresses have access to presale mint.   
