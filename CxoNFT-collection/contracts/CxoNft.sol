@@ -3,7 +3,7 @@ pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Enumerable.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-import "./IWhiteList.sol";
+import "../interfaces/IWhiteList.sol";
 
 /** @dev is ERC721Enumerable keep track of all the tokenIds and tokensIds in the contract */
 contract CxoNft is ERC721Enumerable, Ownable {
