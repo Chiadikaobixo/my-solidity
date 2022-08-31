@@ -52,6 +52,12 @@ contract CxoNft is ERC721Enumerable, Ownable {
         whitelist = IWhiteList(whitelistContract);
     }
 
+    // Function to receive Ether. msg.data must be empty
+    receive() external payable {}
+
+    // Fallback function is called when msg.data is not empty
+    fallback() external payable {}
+
     /** @dev starts presale for all whitelisted addresses */
     function startsPresale() public onlyOwner {
         presaleStarted = true;
@@ -60,7 +66,7 @@ contract CxoNft is ERC721Enumerable, Ownable {
     }
 
     /** @dev presaleMint allows a user to mint one NFT per transaction during the presale */
-    function presaleMint() public onlyWhenNotPaused payable{
+    function presaleMint() public payable onlyWhenNotPaused {
         require(presaleStarted && block.timestamp < presaleEnded, "presale has not started");
         require(whitelist.whitelistedAddresses(msg.sender), "You are not whiteListed");
         require(tokenIds < maxTokenIds, "Total Cxo supply exceeded");
@@ -72,7 +78,7 @@ contract CxoNft is ERC721Enumerable, Ownable {
     }
 
     /** @dev mint allows a user to mint one NFT after the presale has ended */
-    function mint() public onlyWhenNotPaused payable{
+    function mint() public payable onlyWhenNotPaused {
         require(presaleStarted && block.timestamp > presaleEnded, "presale has ended");
         require(tokenIds < maxTokenIds, "Total Cxo supply exceeded");
         require(msg.value >= _price, "Not enough ETH for this transaction");
@@ -82,6 +88,19 @@ contract CxoNft is ERC721Enumerable, Ownable {
         _safeMint(msg.sender, tokenIds);
     }
     
+    /** @dev  setPaused makes the contract paused or unpaused */
+    function setPaused(bool val) public onlyOwner {
+        _paused = val;
+    }
+
+    /** @dev withdraw send all the eth in the contract to the owner of the contract */
+    function withdraw()public onlyOwner {
+        address _owner = owner();
+        uint256 amount = address(this).balance;
+        (bool sent,) = _owner.call{value: amount}("");
+        require(sent, "Transaction Failed");
+    }
+
     /** @dev  _baseURI overides the Openzeppelin's ERC721 implementation which by default
      *  returned an empty string for the baseURI
     */
@@ -89,22 +108,4 @@ contract CxoNft is ERC721Enumerable, Ownable {
         return _baseTokenURI;
     }
 
-    /** @dev  setPaused makes the contract paused or unpaused */
-    function setPaused(bool val) public onlyOwner {
-        _paused = val;
-    }
-
-    /** @dev withdraw send all the eth in the contract to the owner of the contract */
-    function withdraw()public onlyOwner{
-        address _owner = owner();
-        uint256 amount = address(this).balance;
-        (bool sent,) = _owner.call{value: amount}("");
-        require(sent, "Transaction Failed");
-    }
-
-    // Function to receive Ether. msg.data must be empty
-    receive() external payable {}
-
-    // Fallback function is called when msg.data is not empty
-    fallback() external payable {}
 }
