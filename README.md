@@ -15,13 +15,18 @@ Only the manager can finalize the request if the total number of approval is mor
 
 [Deployed contract on Rinkeby Etherscan.](https://rinkeby.etherscan.io/address/0xd345e035EBE32995ffD14292ED1D1630B94d3E26 "crowdFund")    
 
-## 3. WhiteList
+## 3. Faucet   
+Faucet dispenses tokens to users upon request.       
+
+[Deployed contract on Rinkeby Etherscan.](https://rinkeby.etherscan.io/address/0xD4C3563dCACD1f37B638D1b00F6a5b5F5E9dcF07 "faucet")      
+
+## 4. WhiteList
 Owner of the contract deploys the contract.  
 First 10 users get whitelisted for presale access.  
 
 [Deployed contract on Rinkeby Etherscan.](https://rinkeby.etherscan.io/address/0x4b5a54b2EbC2247B1B397346fFd705dDc0f9741f "whitelist") 
 
-## 4. CxoNFT-collection
+## 5. CxoNFT-collection
 Owner of CxoNFT deploys deploys the contract.   
 Owner of the deployed contract starts the presale.   
 Whitelisted addresses have access to presale mint.   
@@ -33,7 +38,7 @@ Owner of the deployed contract can withdraw from the contract.
 
 [Deployed contract on Rinkeby Etherscan.](https://rinkeby.etherscan.io/address/0x664E672487B1067492B101d2179864acAE02a991 "CxoNFT-collection")    
 
-## 5. DAO   
+## 6. DAO   
 #### Decentralized Autonomous Organization for CXO holders     
 Owner of the DAO deploys the contract.      
 Anybody with CXONft can be able create a proposal to purchase a different NFT from an NFT marketplace.    
