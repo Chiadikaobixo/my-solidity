@@ -20,13 +20,18 @@ Faucet dispenses tokens to users upon request.
 
 [Deployed contract on Rinkeby Etherscan.](https://rinkeby.etherscan.io/address/0xD4C3563dCACD1f37B638D1b00F6a5b5F5E9dcF07 "faucet")      
 
-## 4. WhiteList
+## 4. ERC-20
+This is a simple ERC-20 token smart contract that allows you to create your own token on the Ethereum blockchain. ERC-20 is the technical standard for fungible tokens created using the Ethereum blockchain and it allows different smart-contract enabled tokens a way to be exchanged.    
+
+[Deployed contract on Rinkeby Etherscan.](https://rinkeby.etherscan.io/address/0xF78e51b0F9b58B2D5bc47FF7227f40eD609352A2 "Chiadi ERC-20") 
+
+## 5. WhiteList
 Owner of the contract deploys the contract.  
 First 10 users get whitelisted for presale access.  
 
 [Deployed contract on Rinkeby Etherscan.](https://rinkeby.etherscan.io/address/0x4b5a54b2EbC2247B1B397346fFd705dDc0f9741f "whitelist") 
 
-## 5. CxoNFT-collection
+## 6. CxoNFT-collection
 Owner of CxoNFT deploys deploys the contract.   
 Owner of the deployed contract starts the presale.   
 Whitelisted addresses have access to presale mint.   
@@ -38,7 +43,7 @@ Owner of the deployed contract can withdraw from the contract.
 
 [Deployed contract on Rinkeby Etherscan.](https://rinkeby.etherscan.io/address/0x664E672487B1067492B101d2179864acAE02a991 "CxoNFT-collection")    
 
-## 6. DAO   
+## 7. DAO   
 #### Decentralized Autonomous Organization for CXO holders     
 Owner of the DAO deploys the contract.      
 Anybody with CXONft can be able create a proposal to purchase a different NFT from an NFT marketplace.    
