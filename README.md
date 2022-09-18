@@ -67,9 +67,14 @@ This is a smart contract that allows a user to create an account with the Ethere
 6. users can do an inter tranfer from their ethereum bank account to a user ethereum address     
 7. users can change their account password      
 
-#### account status     Minium first deposit     Interest Rate          
-Savings Account      =        0.1 ether               2%     
-Current Account      =        0.5 ether               3%       
-Off-shore Account    =        10 ether                5%       
+### account status    
+#### Savings Account    
+0.1 ether minimum deposit and eligible for 2% interest rate    
+
+#### Current Account    
+0.5 ether minimum deposit and eligible for 3% interest rate    
+
+### Off-shore Account   
+10 ether minimum deposit and eligible for 5% interest rate   
 
 [Deployed contract on Rinkeby Etherscan.](https://rinkeby.etherscan.io/address/0xFe0c402D5Ef218d6edEde5fFE23e43B71c444CeA "bank")    
