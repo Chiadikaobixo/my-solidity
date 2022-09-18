@@ -74,7 +74,7 @@ This is a smart contract that allows a user to create an account with the Ethere
 #### Current Account    
 0.5 ether minimum deposit and eligible for 3% interest rate    
 
-### Off-shore Account   
+#### Off-shore Account   
 10 ether minimum deposit and eligible for 5% interest rate   
 
 [Deployed contract on Rinkeby Etherscan.](https://rinkeby.etherscan.io/address/0xFe0c402D5Ef218d6edEde5fFE23e43B71c444CeA "bank")    
