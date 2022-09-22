@@ -9,7 +9,6 @@ async function main() {
 
   // here we deploy the contract
   const deployedFaucetContract = await faucetContract.deploy();
-  // 10 is the Maximum number of whitelisted addresses allowed
   
   // Wait for it to finish deploying
   await deployedFaucetContract.deployed();
