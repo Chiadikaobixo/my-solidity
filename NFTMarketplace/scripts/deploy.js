@@ -5,7 +5,7 @@ async function main() {
   A ContractFactory in ethers.js is an abstraction used to deploy new smart contracts,
   so marketPlaceContract here is a factory for instances of our marketPlace contract.
   */
-  const marketPlaceContract = await ethers.getContractFactory("marketPlace");
+  const marketPlaceContract = await ethers.getContractFactory("NFTMarketplace");
 
   // here we deploy the contract
   const deployedMarketPlaceContract = await marketPlaceContract.deploy();

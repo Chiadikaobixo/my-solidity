@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.4;
+pragma solidity ^0.8.7;
 
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
@@ -10,7 +10,7 @@ contract NFTMarketplace is ERC721URIStorage {
     Counters.Counter private _tokenIds;
     Counters.Counter private _itemsSold;
 
-    // amount required to put an nft up for sale in the marketplace
+    // amount required to put an nft up for sale on the marketplace
     uint256 listingPrice = 0.01 ether;
     address payable owner;
     // mapping of uint to NftDetails
@@ -84,6 +84,12 @@ contract NFTMarketplace is ERC721URIStorage {
      * an it requires a one time listing fee
      */
     function listNftforSale(uint256 tokenId, uint256 price) public payable {
+        // runs if it is a bought nft. then it will require a one
+        // time listing fee for bought nft's
+        if (nftIdToNftDetails[tokenId].sold == true) {
+            listBoughtToken(tokenId, price);
+            return;
+        }
         require(price > 0, "Price must be at least 1 wei");
         // runs if an address have not listed an nft before
         if (oneTimeListingFee[msg.sender] == false) {
@@ -93,6 +99,7 @@ contract NFTMarketplace is ERC721URIStorage {
             );
         }
 
+        // updates details of the listed nft
         nftIdToNftDetails[tokenId] = NftDetails(
             tokenId,
             payable(msg.sender),
@@ -128,6 +135,7 @@ contract NFTMarketplace is ERC721URIStorage {
         nftIdToNftDetails[tokenId].sold = true;
         nftIdToNftDetails[tokenId].seller = payable(address(0));
         _itemsSold.increment();
+        // transfers nft to the buyers address
         _transfer(address(this), msg.sender, tokenId);
         payable(owner).transfer(listingPrice);
         payable(seller).transfer(msg.value);
@@ -155,7 +163,7 @@ contract NFTMarketplace is ERC721URIStorage {
         nftIdToNftDetails[tokenId].owner = payable(address(this));
         _itemsSold.decrement();
 
-        //   tranfers token to the nftmarketplace contract
+        // tranfers token to the nftmarketplace contract
         _transfer(msg.sender, address(this), tokenId);
         // changes the satues of `msg.sender` to be an address that have listed bought nft
         oneTimeSellingFee[msg.sender] = true;
