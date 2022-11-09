@@ -18,7 +18,7 @@ Only the manager can finalize the request if the total number of approval is mor
 ## 3. Faucet   
 Faucet dispenses tokens to users upon request.       
 
-[Deployed contract on Rinkeby Etherscan.](https://rinkeby.etherscan.io/address/0xD4C3563dCACD1f37B638D1b00F6a5b5F5E9dcF07 "faucet")      
+[Deployed contract on Goerli Etherscan.](https://goerli.etherscan.io/address/0x47a75D5Fc9f3ce643147Bf5856626045f242603e "faucet")      
 
 ## 4. ERC-20
 This is a simple ERC-20 token smart contract that allows you to create your own token on the Ethereum blockchain. ERC-20 is the technical standard for fungible tokens created using the Ethereum blockchain and it allows different smart-contract enabled tokens a way to be exchanged.    
