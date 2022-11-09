@@ -52,7 +52,7 @@ Each NFT counts as one vote for each proposal.
 Voters cannot vote multiple times on the same proposal with the same NFT.        
 If majority of the voters vote for the proposal by the deadline, the owners of CXONFT can executed proposal.    
 
-[Deployed contract on Rinkeby Etherscan.](https://rinkeby.etherscan.io/address/0x29F911C9E55d5f63bFF57402633889D0d6a60e6e "DAO")     
+[Deployed contract on Goerli Etherscan.](https://goerli.etherscan.io/address/0xf5c7c0e02bBDE1d5606C5FA092F9E8D670E07B8b "DAO")     
 
 ## 8. Ethereum Bank
 #### Ethereum bank is a smart contract bank, you can think of it as a normal bank but it operates on ether.     
