@@ -39,7 +39,7 @@ Any address has access to the public mint once presale has ended.
 Owner of the deployed contract can withdraw from the contract.   
 
 [Mint CxoNFT](https://cxo-nft-collection.vercel.app "CxNFT")   
-[View CxoNFT on Opensea](https://testnets.opensea.io/collection/cxonft-v2 "CxNFT")   
+[View CxoNFT on Opensea](https://testnets.opensea.io/collection/cxonft-4lbagqgwro "CxNFT")   
 
 [Deployed contract on Goerli Etherscan.](https://goerli.etherscan.io/address/0x71F202923383B02c98C48618Dd3f18Df97A283df "CxoNFT-collection")    
 
