@@ -16,7 +16,7 @@ Only the manager can finalize the request if the total number of approval is mor
 [Deployed contract on Rinkeby Etherscan.](https://rinkeby.etherscan.io/address/0xd345e035EBE32995ffD14292ED1D1630B94d3E26 "crowdFund")    
 
 ## 3. Faucet   
-Faucet dispenses tokens to users upon request.       
+Faucet is a Smart Contracts that dispenses tokens to users upon request.       
 
 [Deployed contract on Goerli Etherscan.](https://goerli.etherscan.io/address/0x47a75D5Fc9f3ce643147Bf5856626045f242603e "faucet")      
 
